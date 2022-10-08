@@ -24,7 +24,7 @@ const birthdate = document.getElementById("birthdate");
 const tournaments = document.getElementById("tournaments");
 
 // regex
-const nameRegex = /^[a-zA-Z-\s]+$/;
+const nameRegex = /^[A-Z a-z]{2,25}$/;
 const emailRegex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
 const birthdateRegex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
 
@@ -74,7 +74,7 @@ function confirmation() {
 // lastName
 formData[0].addEventListener("input", lastNameValid);
 function lastNameValid() {
-  if (firstName.value.trim() == "" || firstName.value.length <= 2) {
+  if (firstName.value.trim() == "" || firstName.value.length <= 1) {
 
     let firstNameError = document.getElementById("firstname-message");
     firstNameError.innerHTML = messagesErrors.firstNameMsg1;
@@ -98,7 +98,7 @@ function lastNameValid() {
 // firstName
 formData[1].addEventListener("input", firstNameValid);
 function firstNameValid() {
-  if (lastName.value.trim() == "" || lastName.value.length <= 2) {
+  if (lastName.value.trim() == "" || lastName.value.length <= 1) {
 
     let lastNameError = document.getElementById("lastname-message");
     lastNameError.innerHTML = messagesErrors.lastNameMsg1;
